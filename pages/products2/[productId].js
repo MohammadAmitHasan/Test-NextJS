@@ -9,7 +9,9 @@ function Product({ product }) {
     return (
         <div>
             <h2>
-                {product.id} {product.title} {product.price}
+                Product Id: {product.id} <br />
+                Title: {product.title} <br />
+                Price: {product.price}
             </h2>
             <p>{product.description}</p>
             <hr />
@@ -25,7 +27,6 @@ export async function getStaticProps(context) {
         `http://localhost:4000/products/${params.productId}`
     )
     const data = await response.json()
-    console.log(`Generating page for /products/${params.productId}`)
 
     return {
         props: {
