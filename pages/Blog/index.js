@@ -1,3 +1,6 @@
+import Head from "next/head";
+import Footer from "../../Components/footer";
+
 const Blog = () => {
     return (
         <div>
@@ -7,3 +10,16 @@ const Blog = () => {
 };
 
 export default Blog;
+
+Blog.getLayout = function PageLayout(page) {
+    return (
+        <>
+            <Head>
+                <title>Blog Page</title>
+                <meta name="description" content="NextJS Learning" />
+            </Head>
+            {page}
+            <Footer />
+        </>
+    )
+}
